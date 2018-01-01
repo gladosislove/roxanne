@@ -55,7 +55,7 @@ bot.on('ready', () => {
         message.reply('Check your DMs for info. :)')
         message.author.sendMessage("Hey there! Here's a little list of things I can do."); 
         message.author.sendMessage(commands);
-        message.author.sendMessage("I'm being updated all the time, so they'll be more commands soon. Hope this helps!");
+        message.author.sendMessage("I'm being updated all the time, so expect more cool stuff soon. Hope this helps!");
     }
   });
 
