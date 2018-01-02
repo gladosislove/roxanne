@@ -59,11 +59,6 @@ bot.on('ready', () => {
     }
   });
 
-bot.on('message', (message) => {
-  if (msg.author != bot.user && msg.isMentioned(bot.user)) {
-    msg.channel.send("Yes? Type !help at any time for a list of commands."); //using a mention here can lead to looping
-}
-  });
 
   // Create an event listener for new guild members
 bot.on('guildMemberAdd', member => {
