@@ -9,7 +9,7 @@ bot.on('ready', () => {
   const responseObject = {
     "!hi": "hello!",
     "!talk": "sorry. I'm not very talkative.",
-    "!love": "What?",
+    "!love": "what?",
     "!ping": "pong"
   };
 
