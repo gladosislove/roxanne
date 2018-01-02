@@ -4,7 +4,7 @@ const PREFIX = "!"
 
 bot.on('ready', () => {
     bot.user.setGame('Bridge Constructor Portal')
-  })
+  });
 
   const responseObject = {
     "!hi": "hello!",
