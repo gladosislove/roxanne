@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const PREFIX = "!"
 
 bot.on('ready', () => {
-    bot.user.setGame('Portal 2')
+    bot.user.setGame('Bridge Constructor Portal')
   })
 
   const responseObject = {
@@ -57,6 +57,12 @@ bot.on('ready', () => {
         message.author.sendMessage(commands);
         message.author.sendMessage("I'm being updated all the time, so expect more cool stuff soon. Hope this helps!");
     }
+  });
+
+bot.on('message', (message) => {
+  if (msg.author != bot.user && msg.isMentioned(bot.user)) {
+    msg.channel.send("Yes? Type !help at any time for a list of commands."); //using a mention here can lead to looping
+}
   });
 
   // Create an event listener for new guild members
