@@ -4,7 +4,7 @@ const PREFIX = "!"
 
 bot.on('ready', () => {
     bot.user.setGame('Portal 2')
-  })
+  });
 
   const responseObject = {
     "!hi": "hello!",
