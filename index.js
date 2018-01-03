@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const PREFIX = "!"
 
-bot.user.setGame('Portal 2');  //bot.user.setGame
+bot.game.name('Portal 2');  //bot.user.setGame
 
   const responseObject = {
     "!hi": "hello!",
