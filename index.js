@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const PREFIX = "!"
 
 bot.on('ready', () => {
-    bot.setPlayingGame('Portal 2');  //bot.user.setGame
+    bot.user.setGame('Portal 2');  //bot.user.setGame
   });
 
   const responseObject = {
