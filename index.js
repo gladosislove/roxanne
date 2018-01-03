@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const PREFIX = "!"
 
 bot.on('ready', () => {
-    bot.user.setGame('Portal 2')
+    bot.setPlayingGame('Portal 2');  //bot.user.setGame
   });
 
   const responseObject = {
@@ -46,6 +46,14 @@ bot.on('ready', () => {
     // Or message.delete();
   }
   });
+
+  bot.on('message', function() {
+    if (message.content === "$loop") { 
+      var interval = setInterval (function () {
+        message.channel.send("#chat-with-bots", "Hey! Welcome to #chat-with-bots! Here, you can ask any of us bots to do things without clogging up #general. Each bot has their own prefix and help command, myself included. So, converse away!")
+      }, 86400000); 
+    }
+});
 
   //list of commands
   const commands = ["```!hi -- greets the user", "!ping -- a nice game of table tennis", 
