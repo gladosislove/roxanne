@@ -69,17 +69,5 @@ bot.on('ready', () => {
     }
   });
 
-  // Create an event listener for new guild members
-bot.on('guildMemberAdd', member => {
-    // Send the message to a designated channel on a server:
-    const channel = member.guild.channels.find('name', 'member-log');
-    // Do nothing if the channel wasn't found on this server
-    if (!channel) return;
-    // Send the message, mentioning the member
-    'message', (message) => {
-    message.send(`Hi there, ${member}! My name is Roxanne, and I'm the best bot on this server! (Don't tell qtChan)`);
-    message.send(`What do I do? That's debatable, but you can always type '!help' at any time to find out!`);
-    }
-  });
 
 bot.login(process.env.BOT_TOKEN);
