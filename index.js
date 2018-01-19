@@ -48,7 +48,7 @@ bot.on('ready', () => {
   });
 
   bot.on('message', function() {
-    if (message.content === "$loop") { 
+    if (message.content.includes(("$loop")) { 
       var interval = setInterval (function () {
         message.channel.send("chat-with-bots", "Hey! Welcome to #chat-with-bots! Here, you can ask any of us bots to do things without clogging up #general. Each bot has their own prefix and help command, myself included. So, converse away!")
       }, 86400000); 
