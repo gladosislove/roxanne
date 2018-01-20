@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const PREFIX = "!"
 
 bot.on('ready', () => {
-    bot.user.setGame('!help', 'https://twitch.tv/thoseredlights');  //bot.user.setGame
+    bot.user.setPresence({ game: { name: 'Portal 2', type: 0 } });  //bot.user.setGame
   });
 
   const responseObject = {
