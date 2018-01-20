@@ -50,13 +50,13 @@ bot.on('ready', () => {
 
   //list of commands
   const commands = ["```!hi -- greets the user", "!ping -- a nice game of table tennis", 
-  "!8ball -- ask a question, and you will learn", "!help -- find out more!```"];
+  "!8ball -- ask a question, and you will learn", "!talk -- that one explains itself", "!love -- ahahaha what", "!help -- find out more!```"];
 
   //Roxanne DM's the asker with help instructions
   bot.on('message', (message) => {
     if (message.content === PREFIX + 'help') {
         message.reply('Check your DMs for info. :)')
-        message.author.sendMessage("Hey there! Here's a little list of things I can do."); 
+        message.author.sendMessage("Hey there! Here's a little list of things I can currently do."); 
         message.author.sendMessage(commands);
         message.author.sendMessage("Hope this helps!");
     }
