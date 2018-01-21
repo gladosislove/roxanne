@@ -49,7 +49,7 @@ bot.on('ready', () => {
 
 bot.on("message", (message) => {
       if (message.content.includes('Roxannebot')) {
-      message.react(💙)
+      message.react("💙")
       }
     });
 
