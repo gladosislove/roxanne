@@ -47,6 +47,11 @@ bot.on('ready', () => {
   }
   });
 
+bot.on("message", (message) => {
+      if (message.content.includes('Roxannebot')) {
+      message.react(💙)
+      }
+    });
 
   //list of commands
   const commands = ["```!hi -- greets the user", "!ping -- a nice game of table tennis", 
@@ -61,6 +66,11 @@ bot.on('ready', () => {
         message.author.sendMessage("Hope this helps!");
     }
   });
+
+bot.on("guildMemberAdd", member => {
+  const channel = getDefaultChannel(member.guild);
+  channel.send('Welcome ${member} to The Lab!');
+});
 
 
 bot.login(process.env.BOT_TOKEN);
