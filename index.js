@@ -85,10 +85,4 @@ bot.on("message", (message) => {
     }
   });
 
-bot.on("guildMemberAdd", member => {
-  const channel = getDefaultChannel(member.guild);
-  channel.send('Welcome ${member} to The Lab!');
-});
-
-
 bot.login(process.env.BOT_TOKEN);
