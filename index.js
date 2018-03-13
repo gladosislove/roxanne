@@ -42,7 +42,7 @@ bot.on('ready', () => {
 
     //swear checker
     const romance = ["Are you a magician? Because whenever I look at you, everyone else disappears!",
-                    " I’m not a photographer, but I can picture me and you together."
+                    "I’m not a photographer, but I can picture me and you together.",
                     "They say Disneyland is the happiest place on earth. Well apparently, no one has ever been talking to you.",
                     "I’m lost. Can you give me directions to your heart?",
                     "I was wondering if you had an extra heart. Mine was just stolen.",
