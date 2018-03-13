@@ -38,7 +38,7 @@ bot.on('ready', () => {
     });
 
     //swear checker
-    const swearWords = ["fuck", "shit", "twat"];
+    const swearWords = ["fuck", "shit", "twat", "plebs", "pleb", "fucking", "cunt"];
     
     bot.on("message", (message) => {
   if (swearWords.some(word => message.content.includes(word)) ) {
