@@ -10,7 +10,7 @@ bot.on('ready', () => {
     "!hi": "hello!",
     "!talk": "sorry. I'm not very talkative.",
     "!love": "what?",
-    "!ping": "pong"
+    "!ping": "pong",
   };
 
   //reply to one word commands
@@ -39,10 +39,28 @@ bot.on('ready', () => {
 
     //swear checker
     const swearWords = ["fuck", "shit", "twat", "plebs", "pleb", "fucking", "cunt"];
+
+    //swear checker
+    const romance = ["Are you a magician? Because whenever I look at you, everyone else disappears!",
+                    " I’m not a photographer, but I can picture me and you together."
+                    "They say Disneyland is the happiest place on earth. Well apparently, no one has ever been talking to you.",
+                    "I’m lost. Can you give me directions to your heart?",
+                    "I was wondering if you had an extra heart. Mine was just stolen.",
+                    "Is your name Google? Because you have everything I’ve been searching for.",
+                    "If nothing lasts forever, will you be my nothing?"];
+
+    bot.on("message", (message) => {
+      if (message.content.includes('!flirt')) {
+        // stop the spam loop
+        if(message.author.bot) return;
+        message.reply(romance[Math.floor(Math.random()*romance.length)])
+      }
+    });
     
     bot.on("message", (message) => {
   if (swearWords.some(word => message.content.includes(word)) ) {
     message.reply("Oi, watch your language.");
+    message.delete();
     // Or message.delete();
   }
   });
@@ -55,7 +73,7 @@ bot.on("message", (message) => {
 
   //list of commands
   const commands = ["```!hi -- greets the user", "!ping -- a nice game of table tennis", 
-  "!8ball -- ask a question, and you will learn", "!talk -- that one explains itself", "!love -- ahahaha what", "!help -- find out more!```"];
+  "!8ball -- ask a question, and you will learn", "!talk -- that one explains itself", "!love -- ahahaha what", "!flirt -- some of my finest pick-up lines", "!help -- find out more!```"];
 
   //Roxanne DM's the asker with help instructions
   bot.on('message', (message) => {
