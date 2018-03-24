@@ -39,6 +39,8 @@ bot.on('ready', () => {
 
     //swear checker
     const swearWords = ["fuck", "shit", "twat", "plebs", "pleb", "fucking", "cunt"];
+    const swearReply = ["Uh... Watch your language.", "Aaaand deleted.", "Could you say that again with grown-up language?", "I'm so glad you can communicate like an adult.",
+                       "Want to try that again?", "...Ok.", "Ugh. I hate this job. Please stop swearing."];
 
     //swear checker
     const romance = ["Are you a magician? Because whenever I look at you, everyone else disappears!",
@@ -59,7 +61,7 @@ bot.on('ready', () => {
     
     bot.on("message", (message) => {
   if (swearWords.some(word => message.content.includes(word)) ) {
-    message.reply("Oi, watch your language.");
+    message.reply(swearReply[Math.floor(Math.random()*swearReply.length)]);
     message.delete();
     // Or message.delete();
   }
