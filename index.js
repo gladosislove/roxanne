@@ -27,7 +27,7 @@ bot.on('ready', () => {
     'Perhaps.', 'May luck find you well.', 'I think so.', 'Ha. I hope not.',
     'I hope so.', 'Never!', 'Forget about it.', 'Ahahaha! Really?!?', 'Pffft.',
     'Sorry, friend.', 'Hell yeah.', 'Hell no.', 'Psh... Don\'t get your hopes up',
-    'Uh... I guess?', 'I\'d rather not say.', 'Who cares?', 'Yes!'];
+    'Uh... I guess?', 'I\'d rather not say.', 'Who cares?', 'Yes!', "Yes. I'm probably not lying."];
 
     bot.on("message", (message) => {
       if (message.content.includes('!8ball')) {
