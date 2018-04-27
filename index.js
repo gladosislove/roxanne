@@ -88,4 +88,10 @@ bot.on("message", (message) => {
     }
   });
 
+//add person to role
+bot.on('message', (message) => {
+  if (message.content === PREFIX + 'join') {
+  guildMember.addRole('Permission to talk?');
+});
+
 bot.login(process.env.BOT_TOKEN);
