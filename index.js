@@ -92,7 +92,8 @@ bot.on("message", (message) => {
 bot.on("message", (message) => {
       if (message.content === PREFIX + 'join') {
          let role = message.guild.roles.find("name", "Permission to Talk?");
-         message.author.addRole(role)
+         const guildMember = message.member;
+         guildMember.addRole(role)
       }
     });
 
