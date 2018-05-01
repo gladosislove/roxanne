@@ -88,5 +88,13 @@ bot.on("message", (message) => {
     }
   });
 
+//assigning roles.wav
+bot.on("message", (message) => {
+      if (message.content === PREFIX + 'join') {
+         let role = message.guild.roles.find("name", "Permission to Talk?");
+         message.author.addRole(role)
+      }
+    });
+
 
 bot.login(process.env.BOT_TOKEN);
