@@ -90,7 +90,7 @@ bot.on("message", (message) => {
 
 //assigning roles.wav
 bot.on("message", (message) => {
-      if (message.content === PREFIX + 'ok') {
+      if (message.content === PREFIX + 'join') {
          let role = message.guild.roles.find("name", "Permission to Talk?");
          const guildMember = message.member;
          guildMember.addRole(role)
