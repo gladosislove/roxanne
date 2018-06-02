@@ -38,8 +38,8 @@ bot.on('ready', () => {
     });
 
     //swear checker
-    const swearWords = ["fuck", "shit", "twat", "plebs", "pleb", "fucking", "cunt", "nigga", "nigger"];
-        //THE N WORD IS NOT A GOOD WORD. I DO NOT AGREE WITH ITS USE. THIS IS PURELY TO PREVENT PEOPLE USING IT IN THE SERVER.
+    const swearWords = ["twat", "plebs", "pleb", "cunt", "nigga", "nigger", "faggot"];
+        //THESE ARE NOT GOOD WORDs. I DO NOT AGREE WITH THEIR USE. THIS IS PURELY TO PREVENT PEOPLE USING THEM IN THE SERVER.
     const swearReply = ["Uh... Watch your language.", "Aaaand deleted.", "Could you say that again with grown-up language?", "I'm so glad you can communicate like an adult.",
                        "Want to try that again?", "...Ok.", "Ugh. I hate this job. Please stop swearing."];
 
