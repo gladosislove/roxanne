@@ -89,14 +89,14 @@ bot.on("message", (message) => {
   });
 
 //assigning roles.wav
-bot.on("message", (message) => {
-      if (message.content === PREFIX + 'join') {
-         let role = message.guild.roles.find("name", "Permission to Talk?");
-         const guildMember = message.member;
-         guildMember.addRole(role)
-         message.reply('Thank you! You now can now talk in all channels (except for mod-only ones).')
-      }
-    });
+//bot.on("message", (message) => {
+      //if (message.content === PREFIX + 'join') {
+         //let role = message.guild.roles.find("name", "Permission to Talk?");
+         //const guildMember = message.member;
+         //guildMember.addRole(role)
+         //message.reply('Thank you! You now can now talk in all channels (except for mod-only ones).')
+      //}
+    //});
 
 
 bot.login(process.env.BOT_TOKEN);
