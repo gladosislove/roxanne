@@ -88,6 +88,11 @@ bot.on("message", (message) => {
     }
   });
 
+// auto adding role
+   bot.on('guildMemberAdd', (guildMember) => {
+         guildMember.addRole(guildMember.guild.roles.find(role => role.name === "The Test Subjects"));
+}
+
 //assigning roles.wav
 //bot.on("message", (message) => {
       //if (message.content === PREFIX + 'join') {
