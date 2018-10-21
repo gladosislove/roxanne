@@ -88,7 +88,7 @@ bot.on("message", (message) => {
     }
   });
 
-// auto adding role
+// auto adding role on join
    bot.on('guildMemberAdd', (guildMember) => {
          guildMember.addRole(guildMember.guild.roles.find(role => role.name === "The Test Subjects"));
 }
