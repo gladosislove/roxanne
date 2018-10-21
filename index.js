@@ -90,9 +90,7 @@ bot.on("message", (message) => {
 
 // auto adding role on join
    bot.on('guildMemberAdd', (guildMember) => {
-          let role = message.guild.roles.find("name", "The Test Subjects");
-         const guildMember = message.member;
-         guildMember.addRole(role)
+         guildMember.addRole('The Test Subjects');
 }
 
 //assigning roles.wav
