@@ -91,7 +91,7 @@ bot.on("message", (message) => {
 // auto adding role on join
    bot.on('guildMemberAdd', (guildMember) => {
          guildMember.addRole('The Test Subjects');
-}
+});
 
 //assigning roles.wav
 //bot.on("message", (message) => {
