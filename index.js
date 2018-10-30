@@ -114,6 +114,7 @@ bot.on('message', (message) => {
         }
         
         purge();
+        message.channel.send('Channel ${channel.name} purged.')
 
   }
   });
