@@ -104,12 +104,9 @@ bot.on('message', (message) => {
                 return;
             }
                 
-            if(isNaN(args[0])) {
-                message.channel.send('Please use a number.')
-                return;
             }
             
-            const fetched = await message.channel.fetchMessages({limit: args[0]});
+            const fetched = await message.channel.fetchMessages();
             console.log(fetched.size + ' messages found, deleting...');
             
             message.channel.bulkDelete(fetched)
