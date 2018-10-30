@@ -118,8 +118,7 @@ bot.on('message', (message) => {
         
         purge();
 
-    }
-    }
+  }
   });
 
 
