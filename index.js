@@ -114,7 +114,7 @@ bot.on('message', (message) => {
         }
         
         purge();
-        message.channel.send('Channel ${channel.name} purged.')
+        message.channel.send('Channel ${channel.name} purged. ' + fetched.size + ' messages removed.');
 
   }
   });
