@@ -100,7 +100,7 @@ bot.on('message', (message) => {
             message.delete();
             
             if (!message.member.roles.find("name", "The Supreme Overlord")) {
-                message.channel.send('You don\'t have permission to use this command.'); // This tells the user in chat that they need the role.
+                message.channel.send('You don\'t have permission to use this command.');
                 return;
             }
                 
@@ -111,7 +111,7 @@ bot.on('message', (message) => {
             message.channel.bulkDelete(fetched)
                 .catch(error => message.channel.send(`Error: ${error}`)); 
             
-            message.channel.send('Channel ' + ${channel.name} + ' purged. ' + fetched.size + ' messages removed.');
+            message.channel.send(`Channel ${channel.name} purged. ` + fetched.size + ` messages removed.`);
 
         }
         
