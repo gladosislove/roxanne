@@ -104,7 +104,6 @@ bot.on('message', (message) => {
                 return;
             }
                 
-            }
             
             const fetched = await message.channel.fetchMessages();
             console.log(fetched.size + ' messages found, deleting...');
