@@ -106,6 +106,7 @@ bot.on('message', (message) => {
                 
             if(isNaN(args[0])) {
                 message.channel.send('Please use a number.')
+                return;
             }
             
             const fetched = await message.channel.fetchMessages({limit: args[0]});
