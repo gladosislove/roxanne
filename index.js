@@ -93,6 +93,36 @@ bot.on("message", (message) => {
          guildMember.addRole('The Test Subjects');
 });
 
+//purge command
+bot.on('message', (message) => {
+    if (message.content === PREFIX + 'purge') {
+        async function purge() {
+            message.delete();
+            
+            if (!message.member.roles.find("name", "The Supreme Overlord")) {
+                message.channel.send('You don\'t have permission to use this command.'); // This tells the user in chat that they need the role.
+                return;
+            }
+                
+            if(isNaN(args[0])) {
+                message.channel.send('Please use a number.')
+            }
+            
+            const fetched = await message.channel.fetchMessages({limit: args[0]});
+            console.log(fetched.size + ' messages found, deleting...');
+            
+            message.channel.bulkDelete(fetched)
+                .catch(error => message.channel.send(`Error: ${error}`)); 
+
+        }
+        
+        purge();
+
+    }
+    }
+  });
+
+
 //assigning roles.wav
 //bot.on("message", (message) => {
       //if (message.content === PREFIX + 'join') {
