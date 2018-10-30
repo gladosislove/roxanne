@@ -111,7 +111,7 @@ bot.on('message', (message) => {
             message.channel.bulkDelete(fetched)
                 .catch(error => message.channel.send(`Error: ${error}`)); 
             
-            message.channel.send(`Channel ${channel.name} purged. ` + fetched.size + ` messages removed.`);
+            message.channel.send('Channel purged. ' + fetched.size + ' messages removed.');
 
         }
         
