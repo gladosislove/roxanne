@@ -132,7 +132,6 @@ bot.on('message', (message) => {
             .then(connection => {
             const dispatcher = connection.playFile('/monster heart.mp3');
             dispatcher.on("end", end => {inChannel.leave()});
-            .catch(console.error);
         })
       
     });
