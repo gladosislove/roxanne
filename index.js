@@ -128,10 +128,10 @@ bot.on('message', (message) => {
             return message.reply('please enter a voice channel.');
         }}
         
-        voice.join()
+        message.member.voiceChannel.join()
             .then(connection => {
             const dispatcher = connection.playFile('/monster heart.mp3');
-            dispatcher.on("end", end => {voice.leave()});
+            dispatcher.on("end", end => {message.member.voiceChannel.leave()});
         })
       
     });
