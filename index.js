@@ -125,7 +125,7 @@ bot.on('message', (message) => {
     if (message.content === PREFIX + 'fvbmvbuktl') {
         var inChannel = message.member.voiceChannel;
         if(!inChannel) {
-            return message.reply('Please enter a voice channel.');
+            return message.reply('please enter a voice channel.');
         }}
         
         inChannel.join()
