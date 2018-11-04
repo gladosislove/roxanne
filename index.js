@@ -122,7 +122,7 @@ bot.on('message', (message) => {
 
 //monster heart
 bot.on('message', (message) => {
-    if (message.content === PREFIX + 'fvbmvbuktl') {
+    if (message.content === PREFIX + 'monsterheart') {
         const channel = message.member.voiceChannel;
         if(!channel) {
             return message.reply('please enter a voice channel.');
