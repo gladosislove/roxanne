@@ -134,7 +134,7 @@ bot.on('message', (message) => {
             dispatcher.on("end", end => {channel.leave()});
         })
       
-    });
+    }});
         
 
 
