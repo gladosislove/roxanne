@@ -130,7 +130,7 @@ bot.on('message', (message) => {
         
         channel.join()
             .then(connection => {
-            const dispatcher = connection.playFile('/monster heart.mp3');
+            const dispatcher = connection.playFile('monster heart.mp3');
             dispatcher.on("end", end => {channel.leave()});
         })
       
