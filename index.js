@@ -126,7 +126,7 @@ bot.on('message', (message) => {
         var inChannel = message.member.voiceChannel;
         if(!inChannel) {
             return message.reply('Please enter a voice channel.');
-        }
+        }}
         
         inChannel.join()
             .then(connection => {
