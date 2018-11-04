@@ -123,12 +123,12 @@ bot.on('message', (message) => {
 //monster heart
 bot.on('message', (message) => {
     if (message.content === PREFIX + 'fvbmvbuktl') {
-        var inChannel = message.member.voiceChannel;
-        if(!inChannel) {
+        var voiceChannel = message.member.voiceChannel;
+        if(!voiceChannel) {
             return message.reply('please enter a voice channel.');
         }}
         
-        inChannel.join()
+        voiceChannel.join()
             .then(connection => {
             const dispatcher = connection.playFile('/monster heart.mp3');
             dispatcher.on("end", end => {inChannel.leave()});
