@@ -89,8 +89,8 @@ bot.on("message", (message) => {
   });
 
 // auto adding role on join
-   bot.on('guildMemberAdd', (guildMember) => {
-         guildMember.addRole('The Test Subjects');
+bot.on('guildMemberAdd', (guildMember) => {
+    guildMember.addRole('The Test Subjects');
 });
 
 //purge command
@@ -132,7 +132,9 @@ bot.on('message', (message) => {
             .then(connection => {
             const dispatcher = connection.playFile('/monster heart.mp3');
             dispatcher.on("end", end => {inChannel.leave()});
+            .catch(console.error);
         })
+      
     });
         
 
