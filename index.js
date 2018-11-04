@@ -120,6 +120,22 @@ bot.on('message', (message) => {
   }
   });
 
+//monster heart
+bot.on('message', (message) => {
+    if (message.content === PREFIX + 'fvbmvbuktl') {
+        var inChannel = message.member.voiceChannel;
+        if(!inChannel) {
+            return message.reply('Please enter a voice channel.');
+        }
+        
+        inChannel.join()
+            .then(connection => {
+            const dispatcher = connection.playFile('/monster heart.mp3');
+            dispatcher.on("end", end => {inChannel.leave()});
+        })
+    });
+        
+
 
 //assigning roles.wav
 //bot.on("message", (message) => {
