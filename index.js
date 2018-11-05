@@ -85,8 +85,8 @@ bot.on("message", (message) => {
   //Roxanne DM's the asker with help instructions
   bot.on('message', (message) => {
     if (message.content === PREFIX + 'help') {
-        message.reply('Check your DMs for info. :)')
-        message.author.send("Hey there! Here's a little list of things I can currently do."); 
+        message.reply('Check your DMs for info. :)');
+        message.author.send("Hey there! Here's a little list of things I can currently do.");
         message.author.send({embed: {
             color: 0x6df9d3,
             title: "Roxannebot Command List",
@@ -111,11 +111,12 @@ bot.on("message", (message) => {
            footer: {
             text: "Use !help at any time to get a new list of commands!"
             }
-        }
+        }});
                              
         message.author.send("Hope this helps!");
-    }
-  });
+}});
+
+
 
 // auto adding role on join
 bot.on('guildMemberAdd', (guildMember) => {
