@@ -78,8 +78,9 @@ bot.on("message", (message) => {
   const commands = ["```!hi -- greets the user", "!ping -- a nice game of table tennis", 
   "!8ball -- ask a question", "!talk -- that one explains itself", "!love -- ahahaha what", "!flirt -- some of my finest pick-up lines", "!monsterheart -- an unfinished song", "!help -- find out more!```"];
   
+  //embedded commands list
 
-  const embedCommands = [{embed: {
+  c const embedCommands = [{embed: {
     color: 0x6df9d3,
     author: {
       name: client.user.username,
@@ -106,7 +107,8 @@ bot.on("message", (message) => {
     ],
     footer: {
       text: "Use !help at any time to get a new list of commands!"
-    }]
+    }
+ }}];
   
   //Roxanne DM's the asker with help instructions
   bot.on('message', (message) => {
