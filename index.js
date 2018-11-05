@@ -83,8 +83,8 @@ bot.on("message", (message) => {
   const embedCommands = [{embed: {
     color: 0x6df9d3,
     author: {
-      name: client.user.username,
-      icon_url: client.user.avatarURL
+      name: bot.user.username,
+      icon_url: bot.user.avatarURL
     },
     title: "Roxannebot Command List",
     description: "A list of commands for Roxanne. If anything here isn't working as intended, feel free to ping ThoseRedLights.",
