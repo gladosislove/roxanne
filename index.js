@@ -80,7 +80,7 @@ bot.on("message", (message) => {
   
   //embedded commands list
 
-  c const embedCommands = [{embed: {
+  const embedCommands = [{embed: {
     color: 0x6df9d3,
     author: {
       name: client.user.username,
