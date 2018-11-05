@@ -80,38 +80,39 @@ bot.on("message", (message) => {
   
   //embedded commands list
 
-  const embedCommands = [{embed: {
-    color: 0x6df9d3,
-    title: "Roxannebot Command List",
-    description: "A list of commands for Roxanne. If anything here isn't working as intended, feel free to ping ThoseRedLights.",
-    fields: [{
-        name: "One-word Commands",
-        value: "`!ping` `!hi` `!talk` `!love`"
-      },
-      {
-        name: "Fun Commands",
-        value: "`!8ball` `!flirt`"
-      },
-      {
-        name: "Music Commands",
-        value: "`!monsterheart`"
-      },
-      {
-        name: "Moderation Commands (cannot be used by @everyone)",
-        value: "`!purge`"
-      }
-    ],
-    footer: {
-      text: "Use !help at any time to get a new list of commands!"
-    }
- }}];
+
   
   //Roxanne DM's the asker with help instructions
   bot.on('message', (message) => {
     if (message.content === PREFIX + 'help') {
         message.reply('Check your DMs for info. :)')
         message.author.send("Hey there! Here's a little list of things I can currently do."); 
-        message.author.send(embedCommands);
+        message.author.send({embed: {
+            color: 0x6df9d3,
+            title: "Roxannebot Command List",
+            description: "A list of commands for Roxanne. If anything here isn't working as intended, feel free to ping ThoseRedLights.",
+            fields: [{
+                name: "One-word Commands",
+                value: "`!ping` `!hi` `!talk` `!love`"
+            },
+            {
+                name: "Fun Commands",
+                value: "`!8ball` `!flirt`"
+             },
+            {
+              name: "Music Commands",
+               value: "`!monsterheart`"
+              },
+             {
+               name: "Moderation Commands (cannot be used by @everyone)",
+                value: "`!purge`"
+             }
+            ],
+           footer: {
+            text: "Use !help at any time to get a new list of commands!"
+            }
+        }
+                             
         message.author.send("Hope this helps!");
     }
   });
