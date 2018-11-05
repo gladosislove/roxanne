@@ -76,7 +76,7 @@ bot.on("message", (message) => {
 
   //list of commands
   const commands = ["```!hi -- greets the user", "!ping -- a nice game of table tennis", 
-  "!8ball -- ask a question, and you will learn", "!talk -- that one explains itself", "!love -- ahahaha what", "!flirt -- some of my finest pick-up lines", "!help -- find out more!```"];
+  "!8ball -- ask a question", "!talk -- that one explains itself", "!love -- ahahaha what", "!flirt -- some of my finest pick-up lines", "!monsterheart -- an unfinished song", "!help -- find out more!```"];
 
   //Roxanne DM's the asker with help instructions
   bot.on('message', (message) => {
