@@ -80,7 +80,7 @@ bot.on("message", (message) => {
   
 
   const embedCommands = [{embed: {
-    color: #6df9d3,
+    color: 6df9d3,
     author: {
       name: client.user.username,
       icon_url: client.user.avatarURL
