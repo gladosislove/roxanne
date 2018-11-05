@@ -77,14 +77,44 @@ bot.on("message", (message) => {
   //list of commands
   const commands = ["```!hi -- greets the user", "!ping -- a nice game of table tennis", 
   "!8ball -- ask a question", "!talk -- that one explains itself", "!love -- ahahaha what", "!flirt -- some of my finest pick-up lines", "!monsterheart -- an unfinished song", "!help -- find out more!```"];
+  
 
+  const embedCommands = [{embed: {
+    color: #6df9d3,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "Roxannebot Command List",
+    description: "A list of commands for Roxanne. If anything here isn't working as intended, feel free to ping ThoseRedLights.",
+    fields: [{
+        name: "One-word Commands",
+        value: "`!ping` `!hi` `!talk` `!love`"
+      },
+      {
+        name: "Fun Commands",
+        value: "`!8ball` `!flirt`"
+      },
+      {
+        name: "Music Commands",
+        value: "`!monsterheart`"
+      },
+      {
+        name: "Moderation Commands (cannot be used by @everyone)",
+        value: "`!purge`"
+      }
+    ],
+    footer: {
+      text: "Use !help at any time to get a new list of commands!"
+    }]
+  
   //Roxanne DM's the asker with help instructions
   bot.on('message', (message) => {
     if (message.content === PREFIX + 'help') {
         message.reply('Check your DMs for info. :)')
-        message.author.sendMessage("Hey there! Here's a little list of things I can currently do."); 
-        message.author.sendMessage(commands);
-        message.author.sendMessage("Hope this helps!");
+        message.author.send("Hey there! Here's a little list of things I can currently do."); 
+        message.author.send(embedCommands);
+        message.author.send("Hope this helps!");
     }
   });
 
