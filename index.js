@@ -134,7 +134,7 @@ bot.on('message', (message) => {
                 return;
             }
             
-            let cont = message.content.slice(prefix.length)
+            let cont = message.content.slice(PREFIX.length)
             let args = cont.slice(1);
             
             if (isNaN(args[0])) {
