@@ -125,7 +125,7 @@ bot.on('guildMemberAdd', (guildMember) => {
 
 //purge command
 bot.on('message', (message) => {
-    if (message.startsWith(PREFIX + 'purge')) {
+    if (message.content.startsWith(PREFIX + 'purge')) {
         async function purge() {
             message.delete();
             
