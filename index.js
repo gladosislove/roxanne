@@ -126,6 +126,10 @@ bot.on('guildMemberAdd', (guildMember) => {
 //purge command
 bot.on('message', (message) => {
     if (message.content.startsWith(PREFIX + 'purge')) {
+        
+        let cont = message.content.slice(PREFIX.length)
+        let args = cont.slice(1);
+        
         async function purge() {
             message.delete();
             
@@ -134,8 +138,6 @@ bot.on('message', (message) => {
                 return;
             }
             
-            let cont = message.content.slice(PREFIX.length)
-            let args = cont.slice(1);
             
             if (isNaN(args[0])) {
                 // Sends a message to the channel.
