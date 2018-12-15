@@ -125,7 +125,7 @@ bot.on('guildMemberAdd', (guildMember) => {
 
 //purge command
 bot.on('message', (message) => {
-    if (message.content === PREFIX + 'purge') {
+    if (message.startsWith(PREFIX + 'purge')) {
         async function purge() {
             message.delete();
             
@@ -134,8 +134,14 @@ bot.on('message', (message) => {
                 return;
             }
                 
+            if (isNaN(args[0])) {
+                // Sends a message to the channel.
+                message.channel.send('Please specify a number of messages to delete! \n Try: ' + PREFIX + 'purge <amount>');
+                // Cancels out of the script, so the rest doesn't run.
+                return;
+            }
             
-            const fetched = await message.channel.fetchMessages();
+            const fetched = await message.channel.fetchMessages({limit: args[0]});
             console.log(fetched.size + ' messages found, deleting...');
             
             message.channel.bulkDelete(fetched)
