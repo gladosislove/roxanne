@@ -133,7 +133,10 @@ bot.on('message', (message) => {
                 message.channel.send('You don\'t have permission to use this command.');
                 return;
             }
-                
+            
+            let cont = message.content.slice(prefix.length)
+            let args = cont.slice(1);
+            
             if (isNaN(args[0])) {
                 // Sends a message to the channel.
                 message.channel.send('Please specify a number of messages to delete! \n Try: ' + PREFIX + 'purge <amount>');
