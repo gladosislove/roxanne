@@ -1,148 +1,121 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const PREFIX = "!"
+const PREFIX = '!'
+
+// misc arrays
+
+const romance = ['Are you a magician? Because whenever I look at you, everyone else disappears!',
+                    'I\'m not a photographer, but I can picture me and you together.',
+                    'They say Disneyland is the happiest place on earth. Well apparently, no one has ever been talking to you.',
+                    'Hey, I\'m lost. Can you give me directions to your heart?',
+                    'I was wondering if you had an extra heart. Mine was just stolen.',
+                    'Is your name Google? Because you have everything I’ve been searching for.',
+                    'Don\'t forget to tie your shoes! I don’t want you falling for anyone else.',
+                    'On a scale from 1 to 10, you\'re a 9... And I\'m the 1 you need.',
+                    'Are you my appendix? Because I don\'t understand how you work, but this feeling in my stomach makes me want to take you out.',
+                    'Are you my Wi-fi? Because I\'m really feeling a connection.',
+                    'Are you a keyboard ? Because you\'re my type.',
+                    'Hey, my name\'s Microsoft. Can I crash at your place tonight?',
+                    'I\'m no electrician, but I can light up your day.',
+                    'If I had a heart, it\'d beat for you.',
+                    'If nothing lasts forever, will you be my nothing?'
+];
+
+const hug = ['https://media.giphy.com/media/od5H3PmEG5EVq/giphy.gif',
+                'https://media.giphy.com/media/wSY4wcrHnB0CA/giphy.gif',
+                'https://media.giphy.com/media/q3kYEKHyiU4kU/giphy.gif',
+                'https://media.giphy.com/media/C4gbG94zAjyYE/giphy.gif',
+                'https://media.giphy.com/media/l2QDM9Jnim1YVILXa/giphy.gif',
+                'https://media.giphy.com/media/ZQN9jsRWp1M76/giphy.gif'
+];
+
+const pat = ['https://media.giphy.com/media/5tmRHwTlHAA9WkVxTU/giphy.gif',
+                'https://media.giphy.com/media/ye7OTQgwmVuVy/giphy.gif',
+                'https://media.giphy.com/media/109ltuoSQT212w/giphy.gif',
+                'https://media.giphy.com/media/osYdfUptPqV0s/giphy.gif',
+                'https://media.giphy.com/media/4HP0ddZnNVvKU/giphy.gif'
+];
+
+const flip = ['You flipped a coin, it landed on heads.', 'You flipped a coin, it landed on tails.'];
+
+const eightball = [
+    'Maybe.', 'Nah.', 'I hope so.', 'Not today, friend.',
+    'Perhaps.',, 'I think so.', 'I hope not.',
+    'I hope so.', 'Never!', 'Forget about it.', 'Really?',
+    'Sorry, friend.', 'Hell yeah.', 'Hell no.', 'Don\'t get your hopes up',
+    'Uh... I guess?', 'Maybe? Maybe not. It\'s hard to tell.', 'Yes..? Maybe?'
+];
 
 bot.on('ready', () => {
     bot.user.setGame('The Lab | !help for info', 'https://twitch.tv/thoseredlights') //, 'https://twitch.com/thoseredlights'
-  });
+    console.log('Roxannebot is online.')
+});
 
-  const responseObject = {
-    "!hi": "hello!",
-    "!talk": "sorry. I'm not very talkative.",
-    "!love": "what?",
-    "!ping": "pong",
-  };
+bot.on('message', async message => {
 
-  //reply to one word commands
+    // avoiding bot spam
 
-  bot.on("message", (message) => {
-    if(responseObject[message.content]) {
-      message.reply(responseObject[message.content]);
-    }
-  });
+    if(message.author.bot) return;
 
-  //the fun stuff
-  const eightball = [
-    'Maybe.', 'Nah.', 'I hope so.', 'Not today, friend.',
-    'Perhaps.', 'May luck find you well.', 'I think so.', 'Ha. I hope not.',
-    'I hope so.', 'Never!', 'Forget about it.', 'Ahahaha! Really?!?', 'Pffft.',
-    'Sorry, friend.', 'Hell yeah.', 'Hell no.', 'Psh... Don\'t get your hopes up',
-    'Uh... I guess?', 'I\'d rather not say.', 'Who cares?', 'Yes!', "Yes. I'm probably not lying."];
+    // reacting with a heart if name is mentioned
 
-    bot.on("message", (message) => {
-      if (message.content.includes('!8ball')) {
-        // stop the spam loop
-        if(message.author.bot) return;
-        message.reply(eightball[Math.floor(Math.random()*eightball.length)])
-      }
-    });
+    if (message.content.includes('Roxannebot')) {
+        message.react("💙")
+    };
 
-    //swear checker
-    const swearWords = ["twat", "plebs", "pleb", "cunt", "nigga", "nigger", "faggot"];
-        //THESE ARE NOT GOOD WORDs. I DO NOT AGREE WITH THEIR USE. THIS IS PURELY TO PREVENT PEOPLE USING THEM IN THE SERVER.
-    const swearReply = ["Uh... Watch your language.", "Aaaand deleted.", "Could you say that again with grown-up language?", "I'm so glad you can communicate like an adult.",
-                       "Want to try that again?", "...Ok.", "Ugh. I hate this job. Please stop swearing."];
+    // help command + embed
 
-    //swear checker
-    const romance = ["Are you a magician? Because whenever I look at you, everyone else disappears!",
-                    "I’m not a photographer, but I can picture me and you together.",
-                    "They say Disneyland is the happiest place on earth. Well apparently, no one has ever been talking to you.",
-                    "I’m lost. Can you give me directions to your heart?",
-                    "I was wondering if you had an extra heart. Mine was just stolen.",
-                    "Is your name Google? Because you have everything I’ve been searching for.",
-                    "If nothing lasts forever, will you be my nothing?"];
-
-    bot.on("message", (message) => {
-      if (message.content.includes('!flirt')) {
-        // stop the spam loop
-        if(message.author.bot) return;
-        message.reply(romance[Math.floor(Math.random()*romance.length)])
-      }
-    });
-    
-    bot.on("message", (message) => {
-  if (swearWords.some(word => message.content.includes(word)) ) {
-    message.reply(swearReply[Math.floor(Math.random()*swearReply.length)]);
-    message.delete();
-    // Or message.delete();
-  }
-  });
-
-bot.on("message", (message) => {
-      if (message.content.includes('Roxannebot')) {
-      message.react("💙")
-      }
-    });
-
-  //list of commands
-  const commands = ["```!hi -- greets the user", "!ping -- a nice game of table tennis", 
-  "!8ball -- ask a question", "!talk -- that one explains itself", "!love -- ahahaha what", "!flirt -- some of my finest pick-up lines", "!monsterheart -- an unfinished song", "!help -- find out more!```"];
-  
-  //embedded commands list
-
-
-  
-  //Roxanne DM's the asker with help instructions
-  bot.on('message', (message) => {
     if (message.content === PREFIX + 'help') {
-        message.reply('Check your DMs for info. :)');
-        message.author.send("Hey there! Here's a little list of things I can currently do.");
+        message.reply('Check your DMs for info.');
+        message.author.send('Hey there! Here\'s a little list of things I can currently do.');
         message.author.send({embed: {
             color: 0x6df9d3,
-            title: "Roxannebot Command List",
-            description: "A list of commands for Roxanne. If anything here isn't working as intended, feel free to ping ThoseRedLights.",
+            title: 'Roxannebot Command List',
+            description: 'A list of commands for Roxanne. If anything here isn\'t working as intended, feel free to ping ThoseRedLights.',
             fields: [{
-                name: "One-word Commands",
-                value: "`!ping` `!hi` `!talk` `!love`"
-            },
-            {
-                name: "Fun Commands",
-                value: "`!8ball` `!flirt`"
+                name: 'Fun Commands',
+                value: '`!flirt` `!hug` `!pat` `!coinflip` `!8ball`'
              },
             {
-              name: "Music Commands",
-               value: "`!monsterheart`"
+                name: 'Music Commands',
+                value: 'Under construction'
               },
              {
-               name: "Moderation Commands (cannot be used by @everyone)",
-                value: "`!purge`"
+                name: 'Useful Commands (moderation commands cannot be used by @everyone)',
+                value: '`!help` `!purge`'
              }
             ],
            footer: {
-            text: "Use !help at any time to get a new list of commands!"
+            text: 'Use !help at any time to get a new list of commands!'
             }
         }});
                              
-        message.author.send("Hope this helps!");
-}});
+        message.author.send('Hope this helps!');
 
+        console.log('${member.user.tag} has requested a command list.')
 
+    };
 
-// auto adding role on join
-bot.on('guildMemberAdd', (guildMember) => {
-    guildMember.addRole('The Test Subjects');
-});
+    // purge command
 
-//purge command
-bot.on('message', (message) => {
     if (message.content.startsWith(PREFIX + 'purge')) {
         
-        let cont = message.content.slice(PREFIX.length).split(" ");
+        let cont = message.content.slice(PREFIX.length).split(' ');
         let args = cont.slice(1);
         
         async function purge() {
             message.delete();
             
-            if (!message.member.roles.find("name", "The Supreme Overlord")) {
+            if (!message.member.roles.find('name', 'The Supreme Overlord')) {
                 message.channel.send('You don\'t have permission to use this command.');
                 return;
             }
             
             
             if (isNaN(args[0])) {
-                // Sends a message to the channel.
+                // cends a message to the channel
                 message.channel.send('Please specify a number of messages to delete! \n Try: ' + PREFIX + 'purge <amount>');
-                // Cancels out of the script, so the rest doesn't run.
+                // prevents the rest from running
                 return;
             }
             
@@ -158,36 +131,58 @@ bot.on('message', (message) => {
         
         purge();
 
-  }
-  });
+    }
 
-//monster heart
-bot.on('message', (message) => {
-    if (message.content === PREFIX + 'monsterheart') {
-        const channel = message.member.voiceChannel;
-        if(!channel) {
-            return message.reply('please enter a voice channel.');
+    // flirt command
+
+    if (message.content.startsWith(PREFIX + 'flirt')) {
+        message.reply(romance[Math.floor(Math.random()*romance.length)])
+    }
+
+    // coin flip command
+
+    if (message.content.startsWith(PREFIX + 'coinflip')) {
+        message.reply(flip[Math.floor(Math.random()*flip.length)])
+    }
+
+    // 8ball command
+
+    if (message.content.startsWith(PREFIX + '8ball')) {
+        let cont = message.content.slice(PREFIX.length).split(' ');
+        let args = cont.slice(1);
+
+        if(!args[0]) return message.reply('please ask a full question.');
+
+        message.reply(eightball[Math.floor(Math.random()*eightball.length)])
+    }
+
+
+    // hug command
+
+    if(message.content.startsWith(PREFIX + 'hug')) {
+        if(message.mentions.members.size == 1) {
+            let member = message.mentions.members.first()
+            message.channel.send(`${message.author} gave ${member} a hug!`, {
+                file: hug[Math.floor(Math.random() * hug.length)]
+            });
+        } else {
+            message.reply('Please mention a user.')
         }
-        
-        channel.join()
-            .then(connection => {
-            const dispatcher = connection.playFile('monster heart.mp3');
-            dispatcher.on("end", end => {channel.leave()});
-        })
-      
-    }});
-        
+    }
 
+    // pat command
 
-//assigning roles.wav
-//bot.on("message", (message) => {
-      //if (message.content === PREFIX + 'join') {
-         //let role = message.guild.roles.find("name", "Permission to Talk?");
-         //const guildMember = message.member;
-         //guildMember.addRole(role)
-         //message.reply('Thank you! You now can now talk in all channels (except for mod-only ones).')
-      //}
-    //});
+    if(message.content.startsWith(PREFIX + 'pat')) {
+        if(message.mentions.members.size == 1) {
+            let member = message.mentions.members.first()
+            message.channel.send(`${message.author} pats ${member} on the head with love!`, {
+                file: pat[Math.floor(Math.random() * pat.length)]
+            });
+        } else {
+            message.reply('Please mention a user.')
+        }
+    }
 
+});
 
 bot.login(process.env.BOT_TOKEN);
