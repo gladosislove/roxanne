@@ -36,14 +36,14 @@ const pat = ['https://media.giphy.com/media/5tmRHwTlHAA9WkVxTU/giphy.gif',
                 'https://media.giphy.com/media/4HP0ddZnNVvKU/giphy.gif'
 ];
 
-const flip = ['You flipped a coin, it landed on heads.', 'You flipped a coin, it landed on tails.'];
+const flip = ['you flipped a coin, it landed on heads.', 'you flipped a coin, it landed on tails.'];
 
 const eightball = [
-    'Maybe.', 'Nah.', 'I hope so.', 'Not today, friend.',
-    'Perhaps.',, 'I think so.', 'I hope not.',
-    'I hope so.', 'Never!', 'Forget about it.', 'Really?',
-    'Sorry, friend.', 'Hell yeah.', 'Hell no.', 'Don\'t get your hopes up',
-    'Uh... I guess?', 'Maybe? Maybe not. It\'s hard to tell.', 'Yes..? Maybe?'
+    'maybe.', 'nah.', 'I hope so.', 'not today, friend.',
+    'perhaps.',, 'I think so.', 'I hope not.',
+    'I hope so.', 'never!', 'forget about it.', 'really?',
+    'sorry, friend.', 'hell yeah.', 'hell no.', 'don\'t get your hopes up',
+    'uh... I guess?', 'maybe? Maybe not. It\'s hard to tell.', 'yes..? Maybe?'
 ];
 
 bot.on('ready', () => {
@@ -66,7 +66,7 @@ bot.on('message', async message => {
     // help command + embed
 
     if (message.content === PREFIX + 'help') {
-        message.reply('Check your DMs for info.');
+        message.reply('check your DMs for info.');
         message.author.send('Hey there! Here\'s a little list of things I can currently do.');
         message.author.send({embed: {
             color: 0x6df9d3,
@@ -92,7 +92,7 @@ bot.on('message', async message => {
                              
         message.author.send('Hope this helps!');
 
-        console.log('${member.user.tag} has requested a command list.')
+        console.log(`${member.user.tag} has requested a command list.`)
 
     };
 
@@ -166,7 +166,7 @@ bot.on('message', async message => {
                 file: hug[Math.floor(Math.random() * hug.length)]
             });
         } else {
-            message.reply('Please mention a user.')
+            message.reply('please mention a user.')
         }
     }
 
@@ -179,7 +179,7 @@ bot.on('message', async message => {
                 file: pat[Math.floor(Math.random() * pat.length)]
             });
         } else {
-            message.reply('Please mention a user.')
+            message.reply('please mention a user.')
         }
     }
 
