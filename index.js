@@ -209,16 +209,16 @@ bot.on('message', async message => {
         await member.kick(reason)
             .catch(error => message.reply(`Error: ${error}`));
             
-        let kickEmbed = new Discord.RichEmbed()
+        let embed = new Discord.RichEmbed()
             .setTitle('Roxannebot Logs')
             .setDescription(`${member.user.tag} Kicked`)
             .setColor('#6df9d3')
             .addField('User', `${member.user.tag} (${member.id})`)
             .addField('Action By', `@${message.author.id} (${message.author.id})`)
-            .addField('Time', message.createdAt)
-            .addField('Kicked For', reason);
+            .addField('Kicked For', reason)
+            .setTimestamp();
         
-        bot.channels.get('530728851194642442').send({kickEmbed});
+        bot.channels.get('530728851194642442').send({embed});
 
     }
 
