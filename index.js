@@ -183,6 +183,47 @@ bot.on('message', async message => {
         }
     }
 
+    // kick command
+
+    if(message.content.startsWith(PREFIX + 'kick')) {
+        if (!message.member.roles.find('name', 'The Mods')) {
+            message.channel.send('You don\'t have permission to use this command.');
+            return;
+        }
+
+        let member = message.mentions.members.first()
+        if(!member) {
+            message.channel.send('Please mention a valid user.');
+            return;
+        }
+        if(!member.bannable) {
+            message.channel.send('I can\'t ban this user. Do they have a higher role?');
+            return;
+        }
+
+        let cont = message.content.slice(PREFIX.length).split(' ');
+        let args = cont.slice(1);
+        let reason = args.slice(1).join(' ');
+
+        if(!reason) reason = 'No reason provided';
+
+        await member.kick(reason)
+            .catch(error => message.reply(`Error: ${error}`));
+            
+        let kickEmbed = new Discord.RichEmbed()
+            .setTitle('Roxannebot Logs')
+            .setDescription(`${member.user.tag} Kicked`)
+            .setColor("#6df9d3")
+            .addField("User", `${member.user.tag} (${member.id})`)
+            .addField("Action By", `@${message.author.id} (${message.author.id})`)
+            .addField("Time", message.createdAt)
+            .addField("Kicked For", reason);
+        
+        bot.channels.get('530728851194642442').send({embed});
+
+    }
+
+
 });
 
 bot.login(process.env.BOT_TOKEN);
