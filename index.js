@@ -219,7 +219,7 @@ bot.on('message', async message => {
             .addField("Time", message.createdAt)
             .addField("Kicked For", reason);
         
-        bot.channels.get('530728851194642442').send({embed});
+        bot.channels.get('530728851194642442').send({kickEmbed});
 
     }
 
