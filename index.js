@@ -212,7 +212,7 @@ bot.on('message', async message => {
             
         let embed = new Discord.RichEmbed()
             .setTitle('Roxannebot Logs')
-            .setDescription(`${member.user.tag} Kicked`)
+            .setDescription(`**${member.user.tag} Kicked**`)
             .setColor('#6df9d3')
             .addField('User', `${member.user.tag} (${member.id})`)
             .addField('Action By', `@${message.author.id} (${message.author.id})`)
