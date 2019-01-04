@@ -202,8 +202,7 @@ bot.on('message', async message => {
         }
 
         let cont = message.content.slice(PREFIX.length).split(' ');
-        let args = cont.slice(1);
-        let reason = args.slice(1).join(' ');
+        let reason = cont.slice(1).join(' ');
 
         if(!reason) reason = 'No reason provided';
 
@@ -213,11 +212,11 @@ bot.on('message', async message => {
         let kickEmbed = new Discord.RichEmbed()
             .setTitle('Roxannebot Logs')
             .setDescription(`${member.user.tag} Kicked`)
-            .setColor("#6df9d3")
-            .addField("User", `${member.user.tag} (${member.id})`)
-            .addField("Action By", `@${message.author.id} (${message.author.id})`)
-            .addField("Time", message.createdAt)
-            .addField("Kicked For", reason);
+            .setColor('#6df9d3')
+            .addField('User', `${member.user.tag} (${member.id})`)
+            .addField('Action By', `@${message.author.id} (${message.author.id})`)
+            .addField('Time', message.createdAt)
+            .addField('Kicked For', reason);
         
         bot.channels.get('530728851194642442').send({kickEmbed});
 
