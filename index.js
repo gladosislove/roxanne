@@ -221,6 +221,8 @@ bot.on('message', async message => {
         
         bot.channels.get('530728851194642442').send({embed});
 
+        message.channel.send(`${member.user.tag} has been banned by @${message.author.tag} for ${reason}.`)
+
     }
 
 
