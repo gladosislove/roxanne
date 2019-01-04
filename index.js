@@ -202,7 +202,8 @@ bot.on('message', async message => {
         }
 
         let cont = message.content.slice(PREFIX.length).split(' ');
-        let reason = cont.slice(1).join(' ');
+        let args = cont.slice(1);
+        let reason = args.slice(1).join(' ');
 
         if(!reason) reason = 'No reason provided';
 
