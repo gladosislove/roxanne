@@ -82,7 +82,7 @@ bot.on('message', async message => {
               },
              {
                 name: 'Useful Commands (moderation commands cannot be used by @everyone)',
-                value: '`!help` `!purge`'
+                value: '`!help` `!purge` `!kick`'
              }
             ],
            footer: {
@@ -197,7 +197,7 @@ bot.on('message', async message => {
             return;
         }
         if(!member.bannable) {
-            message.channel.send('I can\'t ban this user. Do they have a higher role?');
+            message.channel.send('I can\'t kick this user. Do they have a higher role?');
             return;
         }
 
@@ -221,9 +221,16 @@ bot.on('message', async message => {
         
         bot.channels.get('530728851194642442').send({embed});
 
-        message.channel.send(`${member.user.tag} has been banned by @${message.author.tag} for ${reason}.`)
+        message.channel.send(`${member.user.tag} has been kicked by @${message.author.tag} for ${reason}.`)
 
     }
+
+    if (message.content === PREFIX + 'gamenight') {
+        let role = message.guild.roles.find("name", "Game Night");
+        const guildMember = message.member;
+        guildMember.addRole(role)
+        message.delete()
+     }
 
 
 });
