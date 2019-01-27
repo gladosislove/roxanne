@@ -230,7 +230,15 @@ bot.on('message', async message => {
         const guildMember = message.member;
         guildMember.addRole(role)
         message.delete()
-     }
+    }
+
+
+    if (message.content === PREFIX + 'removegamenight') {
+        let role = message.guild.roles.find("name", "Game Night");
+        const guildMember = message.member;
+        guildMember.removeRole(role)
+        message.delete()
+    }
 
 
 });
