@@ -40,15 +40,22 @@ const flip = ['you flipped a coin, it landed on heads.', 'you flipped a coin, it
 
 const eightball = [
     'maybe.', 'nah.', 'I hope so.', 'not today, friend.',
-    'perhaps.',, 'I think so.', 'I hope not.',
+    'perhaps.', 'I think so.', 'I hope not.',
     'I hope so.', 'never!', 'forget about it.', 'really?',
     'sorry, friend.', 'hell yeah.', 'hell no.', 'don\'t get your hopes up',
     'uh... I guess?', 'maybe? Maybe not. It\'s hard to tell.', 'yes..? Maybe?'
 ];
 
 bot.on('ready', () => {
-    bot.user.setGame('The Lab | !help for info', 'https://twitch.tv/thoseredlights') //, 'https://twitch.com/thoseredlights'
+    bot.user.setGame('The Lab | !help for info', 'https://twitch.tv/thoseredlights')
     console.log('Roxannebot is online.')
+});
+
+// add role
+
+bot.on('guildMemberAdd', member => {
+    var joinRole = member.guild.roles.find('name', 'The Test Subjects');
+    member.addRole(joinRole)
 });
 
 bot.on('message', async message => {
