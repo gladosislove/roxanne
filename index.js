@@ -26,14 +26,21 @@ const hug = ['https://media.giphy.com/media/od5H3PmEG5EVq/giphy.gif',
                 'https://media.giphy.com/media/q3kYEKHyiU4kU/giphy.gif',
                 'https://media.giphy.com/media/C4gbG94zAjyYE/giphy.gif',
                 'https://media.giphy.com/media/l2QDM9Jnim1YVILXa/giphy.gif',
-                'https://media.giphy.com/media/ZQN9jsRWp1M76/giphy.gif'
+                'https://media.giphy.com/media/ZQN9jsRWp1M76/giphy.gif',
+                'https://media1.tenor.com/images/42922e87b3ec288b11f59ba7f3cc6393/tenor.gif?itemid=5634630',
+                'https://media1.tenor.com/images/b4b95730d9967a97bc54457f928f1181/tenor.gif?itemid=7274071',
+                'https://media1.tenor.com/images/ee95b90c9461219ff77136d6534d1f6b/tenor.gif?itemid=11050300'
 ];
 
 const pat = ['https://media.giphy.com/media/5tmRHwTlHAA9WkVxTU/giphy.gif',
                 'https://media.giphy.com/media/ye7OTQgwmVuVy/giphy.gif',
                 'https://media.giphy.com/media/109ltuoSQT212w/giphy.gif',
                 'https://media.giphy.com/media/osYdfUptPqV0s/giphy.gif',
-                'https://media.giphy.com/media/4HP0ddZnNVvKU/giphy.gif'
+                'https://media.giphy.com/media/4HP0ddZnNVvKU/giphy.gif',
+                'https://media1.tenor.com/images/667d8a04d2390a8c6bf33caca9bfb9a6/tenor.gif?itemid=5352915',
+                'https://media1.tenor.com/images/c0c1c5d15f8ad65a9f0aaf6c91a3811e/tenor.gif?itemid=13410974',
+                'https://media1.tenor.com/images/54722063c802bac30d928db3bf3cc3b4/tenor.gif?itemid=8841561',
+                'https://media1.tenor.com/images/cd670d11c8ee567585208c5437f88f36/tenor.gif?itemid=12907914'
 ];
 
 const flip = ['you flipped a coin, it landed on heads.', 'you flipped a coin, it landed on tails.'];
