@@ -127,7 +127,7 @@ bot.on('message', async message => {
             
             
             if (isNaN(args[0])) {
-                // cends a message to the channel
+                // sends a message to the channel
                 message.channel.send('Please specify a number of messages to delete! \n Try: ' + PREFIX + 'purge <amount>');
                 // prevents the rest from running
                 return;
@@ -197,6 +197,18 @@ bot.on('message', async message => {
         }
     }
 
+        //anniversary command
+
+    if (message.content === PREFIX + 'boop') {
+        if(message.mentions.members.size == 1) {
+            message.channel.send("Psst. Happy one month anniversary, Tom! ; v ;", {
+                file: "tom but he's even more uwu.png"
+            });
+        } else {
+            message.reply('please mention a user.')
+        }     
+    }
+
     // kick command
 
     if(message.content.startsWith(PREFIX + 'kick')) {
@@ -239,6 +251,8 @@ bot.on('message', async message => {
 
     }
 
+    //game night roles
+
     if (message.content === PREFIX + 'gamenight') {
         let role = message.guild.roles.find("name", "Game Night");
         const guildMember = message.member;
@@ -253,7 +267,6 @@ bot.on('message', async message => {
         guildMember.removeRole(role)
         message.delete()
     }
-
 
 });
 
