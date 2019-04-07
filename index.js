@@ -201,7 +201,7 @@ bot.on('message', async message => {
 
     if (message.content.startsWith(PREFIX + 'boop')) {
         if(message.mentions.members.size == 1) {
-            message.channel.send("Psst. Happy one month anniversary, Tom! ; v ;", {
+            message.channel.send("Psst. Happy one month anniversary! ; v ;", {
                 files: [
                     "./tom but he's even more uwu.png"
                 ]
