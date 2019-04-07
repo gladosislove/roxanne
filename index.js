@@ -199,7 +199,7 @@ bot.on('message', async message => {
 
         //anniversary command
 
-    if (message.content === PREFIX + 'boop') {
+    if (message.content.startsWith(PREFIX + 'boop')) {
         if(message.mentions.members.size == 1) {
             message.channel.send("Psst. Happy one month anniversary, Tom! ; v ;", {
                 file: ["./tom but he's even more uwu.png"]
