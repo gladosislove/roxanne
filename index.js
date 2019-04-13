@@ -27,9 +27,9 @@ const hug = ['https://media.giphy.com/media/od5H3PmEG5EVq/giphy.gif',
                 'https://media.giphy.com/media/C4gbG94zAjyYE/giphy.gif',
                 'https://media.giphy.com/media/l2QDM9Jnim1YVILXa/giphy.gif',
                 'https://media.giphy.com/media/ZQN9jsRWp1M76/giphy.gif',
-                'https://media1.tenor.com/images/42922e87b3ec288b11f59ba7f3cc6393/tenor.gif?itemid=5634630',
-                'https://media1.tenor.com/images/b4b95730d9967a97bc54457f928f1181/tenor.gif?itemid=7274071',
-                'https://media1.tenor.com/images/ee95b90c9461219ff77136d6534d1f6b/tenor.gif?itemid=11050300'
+                'https://media1.tenor.com/images/42922e87b3ec288b11f59ba7f3cc6393/tenor.gif',
+                'https://media1.tenor.com/images/b4b95730d9967a97bc54457f928f1181/tenor.gif',
+                'https://media1.tenor.com/images/ee95b90c9461219ff77136d6534d1f6b/tenor.gif'
 ];
 
 const pat = ['https://media.giphy.com/media/5tmRHwTlHAA9WkVxTU/giphy.gif',
@@ -37,10 +37,16 @@ const pat = ['https://media.giphy.com/media/5tmRHwTlHAA9WkVxTU/giphy.gif',
                 'https://media.giphy.com/media/109ltuoSQT212w/giphy.gif',
                 'https://media.giphy.com/media/osYdfUptPqV0s/giphy.gif',
                 'https://media.giphy.com/media/4HP0ddZnNVvKU/giphy.gif',
-                'https://media1.tenor.com/images/667d8a04d2390a8c6bf33caca9bfb9a6/tenor.gif?itemid=5352915',
-                'https://media1.tenor.com/images/c0c1c5d15f8ad65a9f0aaf6c91a3811e/tenor.gif?itemid=13410974',
-                'https://media1.tenor.com/images/54722063c802bac30d928db3bf3cc3b4/tenor.gif?itemid=8841561',
-                'https://media1.tenor.com/images/cd670d11c8ee567585208c5437f88f36/tenor.gif?itemid=12907914'
+                'https://media1.tenor.com/images/667d8a04d2390a8c6bf33caca9bfb9a6/tenor.gif',
+                'https://media1.tenor.com/images/c0c1c5d15f8ad65a9f0aaf6c91a3811e/tenor.gif',
+                'https://media1.tenor.com/images/54722063c802bac30d928db3bf3cc3b4/tenor.gif',
+                'https://media1.tenor.com/images/cd670d11c8ee567585208c5437f88f36/tenor.gif'
+];
+
+const chu = ['https://i.pinimg.com/originals/cb/c4/c1/cbc4c1c7066c3b793a03427b739de102.gif',
+                'https://media1.tenor.com/images/e858678426357728038c277598871d6d/tenor.gif',
+                'https://media1.tenor.com/images/54b4357dc2a9f066a89f4843fa16352d/tenor.gif',
+                'https://media1.tenor.com/images/b011c3ec014e3fc90b071e477e9f9054/tenor.gif'
 ];
 
 const flip = ['you flipped a coin, it landed on heads.', 'you flipped a coin, it landed on tails.'];
@@ -197,18 +203,17 @@ bot.on('message', async message => {
         }
     }
 
-        //anniversary command
+    // kiss command
 
-    if (message.content.startsWith(PREFIX + 'boop')) {
-        if(message.mentions.members.size == 1) {
-            message.channel.send("Psst. Happy one month anniversary! ; v ;", {
-                files: [
-                    "./tom but he's even more uwu.png"
-                ]
+    if(message.content.startsWith(PREFIX + 'chu')) {
+        if(message.mentions.member.size == 1) {
+            let member = message.mentions.members.first()
+            messgae.channel.send(`${message.author} blows ${member} a kiss!`, {
+                file: chu[Math.floor(Math.random() * pat.length)]
             });
-        } else {
-            message.reply('please mention a user.')
-        }     
+    } else {
+        message.reply('please mention a user.')
+        }
     }
 
     // kick command
