@@ -206,9 +206,9 @@ bot.on('message', async message => {
     // kiss command
 
     if(message.content.startsWith(PREFIX + 'chu')) {
-        if(message.mentions.member.size == 1) {
+        if(message.mentions.members.size == 1) {
             let member = message.mentions.members.first()
-            messgae.channel.send(`${message.author} blows ${member} a kiss!`, {
+            message.channel.send(`${message.author} blows ${member} a kiss!`, {
                 file: chu[Math.floor(Math.random() * chu.length)]
             });
         } else {
