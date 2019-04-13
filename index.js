@@ -94,7 +94,7 @@ bot.on('message', async message => {
             description: 'A list of commands for Roxanne. If anything here isn\'t working as intended, feel free to ping ThoseRedLights.',
             fields: [{
                 name: 'Fun Commands',
-                value: '`!flirt` `!hug` `!pat` `!coinflip` `!8ball`'
+                value: '`!flirt` `!hug` `!pat` `!chu `!coinflip` `!8ball`'
              },
             {
                 name: 'Music Commands',
