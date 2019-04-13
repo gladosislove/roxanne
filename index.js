@@ -211,8 +211,8 @@ bot.on('message', async message => {
             messgae.channel.send(`${message.author} blows ${member} a kiss!`, {
                 file: chu[Math.floor(Math.random() * chu.length)]
             });
-    } else {
-        message.reply('please mention a user.')
+        } else {
+            message.reply('please mention a user.')
         }
     }
 
