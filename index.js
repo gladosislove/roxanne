@@ -209,7 +209,7 @@ bot.on('message', async message => {
         if(message.mentions.member.size == 1) {
             let member = message.mentions.members.first()
             messgae.channel.send(`${message.author} blows ${member} a kiss!`, {
-                file: chu[Math.floor(Math.random() * pat.length)]
+                file: chu[Math.floor(Math.random() * chu.length)]
             });
     } else {
         message.reply('please mention a user.')
