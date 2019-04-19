@@ -53,8 +53,8 @@ const kiss = ['https://media0.giphy.com/media/FqBTvSNjNzeZG/giphy.gif',
                 'https://24.media.tumblr.com/5d51b3bbd64ccf1627dc87157a38e59f/tumblr_n5rfnvvj7H1t62gxao1_500.gif',
                 'https://media.giphy.com/media/Gj8bn4pgTocog/giphy.gif',
                 'https://media1.tenor.com/images/7fd98defeb5fd901afe6ace0dffce96e/tenor.gif',
-                'https://media1.tenor.com/images/6e3b02e851514c94717082562a759228/tenor.gif?',
-                'https://media1.tenor.com/images/47f568eb3dd3c291cd9da0b237875c5c/tenor.gif?itemid=13698734'
+                'https://media1.tenor.com/images/6e3b02e851514c94717082562a759228/tenor.gif',
+                'https://media1.tenor.com/images/47f568eb3dd3c291cd9da0b237875c5c/tenor.gif'
 ];
 
 const flip = ['you flipped a coin, it landed on heads.', 'you flipped a coin, it landed on tails.'];
@@ -102,7 +102,7 @@ bot.on('message', async message => {
             description: 'A list of commands for Roxanne. If anything here isn\'t working as intended, feel free to ping ThoseRedLights.',
             fields: [{
                 name: 'Fun Commands',
-                value: '`!flirt` `!hug` `!pat` `!chu `!coinflip` `!8ball`'
+                value: '`!flirt` `!hug` `!pat` `!chu` `!kiss` `!coinflip` `!8ball`'
              },
             {
                 name: 'Music Commands',
