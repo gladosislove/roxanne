@@ -57,6 +57,15 @@ const kiss = ['https://media0.giphy.com/media/FqBTvSNjNzeZG/giphy.gif',
                 'https://media1.tenor.com/images/47f568eb3dd3c291cd9da0b237875c5c/tenor.gif'
 ];
 
+const cuddle = ['https://media.giphy.com/media/143v0Z4767T15e/giphy.gif',
+                    'https://data.whicdn.com/images/118920189/original.gif',
+                    'https://media1.tenor.com/images/13f3b0ec5bc99c01c3ad40b878c8300b/tenor.gif',
+                    'https://media.giphy.com/media/aVmEsdMmCTqSs/giphy.gif',
+                    'https://media.tenor.com/images/0abe1090ab9874c62c4baaac18f0994d/tenor.gif',
+                    'https://gifimage.net/wp-content/uploads/2017/09/anime-couple-snuggle-gif-11.gif'
+
+];
+
 const flip = ['you flipped a coin, it landed on heads.', 'you flipped a coin, it landed on tails.'];
 
 const eightball = [
@@ -237,6 +246,18 @@ bot.on('message', async message => {
         }
     }
 
+    //cuddle command
+
+    if(message.content.startsWith(PREFIX + 'cuddle')) {
+        if(message.mentions.members.size == 1) {
+            let member = message.mentions.members.first()
+            message.channel.send(`${message.author} leans in and cuddles ${member}. <3`, {
+                file: cuddle[Math.floor(Math.random() * cuddle.length)]
+            });
+        } else {
+            message.reply('please mention a user.')
+        }
+    }
 
     // kick command
 
